@@ -38,4 +38,5 @@ const configureStore = () => {
 
 	return store;
 };
+export type RootState = ReturnType<typeof rootReducer>;
 export default configureStore();

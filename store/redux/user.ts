@@ -1,7 +1,7 @@
 import { createAction, handleActions } from 'redux-actions';
 import produce from 'immer';
 import { takeLatest } from 'redux-saga/effects';
-import { requestUserInfo } from '../saga/userApi';
+import { requestUserInfo, requestLoginInfo } from '../saga/userApi';
 import createAsyncSaga, {
 	asyncActionCreator,
 	createAsyncAction,
@@ -18,8 +18,8 @@ export interface UserType {
 }
 const initialState: UserType = {
 	user: {
-		userEmail: '123@naver.com',
-		nickname: 'ddd',
+		userEmail: '',
+		nickname: '',
 		imageUrl: 'https://ossack.s3.ap-northeast-2.amazonaws.com/basicprofile.png',
 	},
 
@@ -32,11 +32,13 @@ const USER_IMG = asyncActionCreator('USER_IMG');
 
 // Action Creator
 const setUser = createAsyncAction(SET_USER);
+const signUp = createAsyncAction(SET_USER);
 const logOut = createAction(LOG_OUT, () => {});
 const user_img = createAsyncAction(USER_IMG);
 
 // saga
-const getUserSaga = createAsyncSaga(setUser, requestUserInfo);
+const getUserSaga = createAsyncSaga(signUp, requestUserInfo);
+const getLoginSaga = createAsyncSaga(setUser, requestLoginInfo);
 
 // reducer
 export default handleActions(
@@ -59,10 +61,11 @@ export default handleActions(
 	initialState,
 );
 
-const actionCreators = { setUser, logOut, user_img };
+const actionCreators = { setUser, logOut, user_img, signUp };
 
 export { actionCreators };
 
 export function* userSaga() {
 	yield takeLatest(SET_USER.REQUEST, getUserSaga);
+	yield takeLatest(SET_USER.REQUEST, getLoginSaga);
 }
