@@ -7,6 +7,8 @@ import theme from '../styles/theme';
 import { gsap } from 'gsap';
 import Script from 'next/script';
 import GlobalStyle from '../styles/GlobalStyle';
+import { Provider } from 'react-redux';
+import store from '../store';
 
 function MyApp({ Component, pageProps }: AppProps) {
 	const textRef = useRef<HTMLDivElement>(null);
@@ -57,15 +59,17 @@ function MyApp({ Component, pageProps }: AppProps) {
 			</Head>
 			<GlobalStyle />
 			<ThemeProvider theme={theme}>
-				<Wrap>
-					<Background>
-						<TextImg ref={textRef} />
-						{!active && <Text02Img ref={text2Ref} />}
-					</Background>
-					<MobileFrame className='MobileFramePage'>
-						<Component {...pageProps} />
-					</MobileFrame>
-				</Wrap>
+				<Provider store={store}>
+					<Wrap>
+						<Background>
+							<TextImg ref={textRef} />
+							{!active && <Text02Img ref={text2Ref} />}
+						</Background>
+						<MobileFrame className='MobileFramePage'>
+							<Component {...pageProps} />
+						</MobileFrame>
+					</Wrap>
+				</Provider>
 			</ThemeProvider>
 		</>
 	);
