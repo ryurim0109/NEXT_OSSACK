@@ -1655,6 +1655,11 @@
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
 
+"@types/kakaomaps@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@types/kakaomaps/-/kakaomaps-1.1.2.tgz#547d941108c397d20f0f5a4751993479318ded53"
+  integrity sha512-MW3oLwsCJSm0DkkpzuO3b12NH045tkTVKtuyL7IcdtdhLF/Afi5fykQif25jDNEGX4xOd/u/ShltFtNBduWugg==
+
 "@types/next-redux-saga@^3.0.2":
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/@types/next-redux-saga/-/next-redux-saga-3.0.2.tgz#1440cabcfa1f979ccd52dd9e298fb53e0d39ed72"
