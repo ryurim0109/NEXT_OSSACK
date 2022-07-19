@@ -6,7 +6,7 @@ import {
 	MyLogout,
 } from '../../src/components/containers/mypage/index';
 import { Grid, Image, Text } from '../../src/elements/index';
-import { GetServerSideProps, GetStaticProps } from 'next';
+import { GetStaticProps } from 'next';
 import axios from 'axios';
 
 const Mypage = ({ user_info }) => {

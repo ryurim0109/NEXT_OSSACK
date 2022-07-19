@@ -4,5 +4,6 @@ import Bar from './Bar';
 import Banner from './Banner';
 import XScrollDrag from './XScrollDrag';
 import MyHeader from './MyHeader';
+import Accordion from './Accordion';
 
-export { MobileFrame, TalkTalk, Bar, Banner, XScrollDrag, MyHeader };
+export { MobileFrame, TalkTalk, Bar, Banner, XScrollDrag, MyHeader, Accordion };
