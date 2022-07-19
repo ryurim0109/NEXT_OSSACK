@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { Bar } from '../../src/components/shared';
-import { MapSearchBar } from '../../src/components/containers/map';
+import { MapSearchBar, MainMap } from '../../src/components/containers/map';
 
 const OfficeMap = () => {
 	const router = useRouter();
@@ -10,6 +10,7 @@ const OfficeMap = () => {
 	return (
 		<>
 			<MapSearchBar name={name} />
+			<MainMap />
 			<Bar />
 		</>
 	);

@@ -3254,6 +3254,11 @@ just-curry-it@^3.1.0:
   resolved "https://registry.yarnpkg.com/just-curry-it/-/just-curry-it-3.2.1.tgz#7bb18284c8678ed816bfc5c19e44400605fbe461"
   integrity sha512-Q8206k8pTY7krW32cdmPsP+DqqLgWx/hYPSj9/+7SYqSqz7UuwPbfSe07lQtvuuaVyiSJveXk0E5RydOuWwsEg==
 
+kakao.maps.d.ts@^0.1.32:
+  version "0.1.32"
+  resolved "https://registry.yarnpkg.com/kakao.maps.d.ts/-/kakao.maps.d.ts-0.1.32.tgz#064880506706feb39eb641b0a7a71e5907f67cf9"
+  integrity sha512-xQULJE5XDOjfeK4Ba04AH4l/raTvHEoX72cbBhCUp6nS9rpJ7tEQgJP2A68kwTesnK5ug0Pa9LVEp+HfYHBsrg==
+
 language-subtag-registry@~0.3.2:
   version "0.3.21"
   resolved "https://registry.yarnpkg.com/language-subtag-registry/-/language-subtag-registry-0.3.21.tgz#04ac218bea46f04cb039084602c6da9e788dd45a"
@@ -3666,6 +3671,13 @@ react-is@^18.0.0, react-is@^18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
+
+react-kakao-maps-sdk@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-kakao-maps-sdk/-/react-kakao-maps-sdk-1.1.1.tgz#1839853ccf184a579561edf65e6f5381f0d1dece"
+  integrity sha512-x7UEBC0qedBZOBJvCXUoxT4p6iH4t4lj8MKgo2QwGPJUsTi4njbhWDY2HYlNty7a42q1kL8gzeYouJjbg1ylAA==
+  dependencies:
+    kakao.maps.d.ts "^0.1.32"
 
 react-redux@^8.0.2:
   version "8.0.2"

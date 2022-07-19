@@ -51,7 +51,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 				<meta charSet='utf-8' />
 				<meta name='description' content='오피스 구할 땐 오싹으로 싹가능!' />
 				<title>OSSACK</title>
-
+				<Script
+					src='//dapi.kakao.com/v2/maps/sdk.js?appkey=674f01fb27a171cd85fcbe447348c03e&libraries=services,clusterer&autoload=false'
+					strategy='beforeInteractive'
+				/>
 				<Script
 					type='text/javascript'
 					src='%REACT_APP_KAKAO_KEY%&libraries=services,clusterer,drawing'></Script>

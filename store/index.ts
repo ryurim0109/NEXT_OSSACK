@@ -6,10 +6,12 @@ import withReduxSaga from 'next-redux-saga';
 import withRedux from 'next-redux-wrapper';
 import user from './redux/user';
 import office from './redux/office';
+import map from './redux/map';
 
 const rootReducer = combineReducers({
 	user,
 	office,
+	map,
 });
 
 const env = process.env.NODE_ENV;

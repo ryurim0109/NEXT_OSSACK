@@ -37,7 +37,7 @@ const MapSearchBar = (props: SearchProps) => {
 				</Button>
 				{name === 'office' ? (
 					<FilterBtn onClick={openModalHandler}>
-						<img src='/assets/filter.svg' alt='dd' />
+						<img src='/assets/filter.svg' alt='필터 아이콘' />
 					</FilterBtn>
 				) : null}
 			</Outter>
