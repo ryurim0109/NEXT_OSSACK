@@ -14,7 +14,7 @@ const Bar = () => {
 	const router = useRouter();
 	//ßconst user = useSelector((state: RootState) => state.user);
 	const currentLocation = router.pathname.split('/')[1];
-	console.log(typeof currentLocation);
+	//console.log(typeof currentLocation);
 
 	const gnbClick = (
 		e: React.MouseEvent<HTMLButtonElement>,

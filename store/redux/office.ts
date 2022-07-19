@@ -15,6 +15,21 @@ export interface SearchItemDataParams {
 	mylike?: boolean;
 	estateid?: number;
 }
+export interface MainofficeType {
+	estateid: number;
+	type: string;
+	monthly: string;
+	deposit: string;
+	rent_fee: number;
+	buildingFloor: number;
+	roomFloor: number;
+	buildingInfo: string;
+	area: string;
+	images: Array<string>;
+	subways: Array<string>;
+	mylike: boolean;
+	title: string;
+}
 export interface coordinateResponseDtoType {
 	lat: number;
 	lng: number;

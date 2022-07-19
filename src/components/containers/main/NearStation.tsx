@@ -3,56 +3,39 @@ import { Grid, Button, Text, Image } from '../../../elements/index';
 import styled from 'styled-components';
 import axios from 'axios';
 import { NextPage } from 'next';
-// import {
-//   getMainOfficeDB,
-//   mainDeleteLikeDB,
-//   mainClickLikeDB,
-// } from "../../redux/modules/office";
+import { actionCreators as officeActions } from '../../../../store/redux/office';
+
 import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import { RootState } from '../../../../store/index';
-// export interface MainofficeType {
-// 	estateid: number;
-// 	type: string;
-// 	monthly: string;
-// 	deposit: string;
-// 	rent_fee: number;
-// 	buildingFloor: number;
-// 	roomFloor: number;
-// 	buildingInfo: string;
-// 	area: string;
-// 	images: Array<string>;
-// 	subways: Array<string>;
-// 	mylike: boolean;
-// 	title: string;
-// }
+export interface MainofficeType {
+	estateid: number;
+	type: string;
+	monthly: string;
+	deposit: string;
+	rent_fee: number;
+	buildingFloor: number;
+	roomFloor: number;
+	buildingInfo: string;
+	area: string;
+	images: Array<string>;
+	subways: Array<string>;
+	mylike: boolean;
+	title: string;
+}
 
-// export async function getStaticProps() {
-// 	try {
-// 		const response = await axios.get<MainofficeType>(
-// 			'http://localhost:3000/api/officeapi',
-// 		);
-// 		const data = response.data;
-// 		return {
-// 			props: {
-// 				stationOfficeList: data,
-// 			},
-// 		};
-// 	} catch (err) {
-// 		console.log(err);
-// 	}
-// }
-// interface Props {
-// 	stationOfficeList: MainofficeType[];
-// }
-const NearStation = () => {
-	const dispatch = useDispatch();
+interface Props {
+	stationOfficeList?: MainofficeType[];
+}
+const NearStation: NextPage<Props> = () => {
 	const router = useRouter();
+	const dispatch = useDispatch();
 	const stationOfficeList = useSelector(
 		(state: RootState) => state.office.main_list,
 	);
+	console.log(stationOfficeList);
 	useEffect(() => {
-		// dispatch(getMainOfficeDB("역"));
+		dispatch(officeActions.getMainOffice.request());
 	}, []);
 
 	return (
@@ -133,7 +116,25 @@ const NearStation = () => {
 		</React.Fragment>
 	);
 };
+
+// export async function getStaticProps() {
+// 	try {
+// 		const response = await axios.get<MainofficeType>(
+// 			'http://localhost:3000/api/officeapi',
+// 		);
+// 		const data = response.data;
+// 		console.log(data);
+// 		return {
+// 			props: {
+// 				stationOfficeList: data,
+// 			},
+// 		};
+// 	} catch (err) {
+// 		console.log(err);
+// 	}
+// }
+
+export default NearStation;
 const Span = styled.span`
 	font-size: 10px;
 `;
-export default NearStation;
