@@ -1,6 +1,13 @@
-import React from "react";
-import MainPage from "../src/components/containers/main/MainPage";
+import React from 'react';
+import { Bar } from '../src/components/shared';
+import { MainPage } from '../src/components/containers/main';
 
-export default function <Main>() {
-  return <MainPage />;
-}
+const main = () => {
+	return (
+		<>
+			<MainPage />
+		</>
+	);
+};
+
+export default main;

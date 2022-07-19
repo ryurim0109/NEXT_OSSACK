@@ -5,9 +5,11 @@ import rootSaga from './saga/index';
 import withReduxSaga from 'next-redux-saga';
 import withRedux from 'next-redux-wrapper';
 import user from './redux/user';
+import office from './redux/office';
 
 const rootReducer = combineReducers({
 	user,
+	office,
 });
 
 const env = process.env.NODE_ENV;
