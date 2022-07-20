@@ -1,16 +1,6 @@
 import React from 'react';
 import { MyHeader, Bar } from '../../src/components/shared/index';
 import styled from 'styled-components';
-//멤버 이미지
-import member1 from '../assets/member1.png';
-import member2 from '../assets/member2.png';
-import member3 from '../assets/member3.png';
-import member4 from '../assets/member4.png';
-import member5 from '../assets/member5.png';
-import member6 from '../assets/member6.png';
-import member7 from '../assets/member7.png';
-import member8 from '../assets/member8.png';
-import member9 from '../assets/member9.png';
 import { useSelector } from 'react-redux';
 
 import { Grid, Image, Text } from '../../src/elements/index';
@@ -36,7 +26,7 @@ const Member = () => {
 						window.open('https://github.com/Littlecold4', '_blank');
 					}}>
 					<Grid width='120px' height='120px' cursor='pointer'>
-						<Image src={member1} shape='rectangle' />
+						<Image src='/assets/member1.png' shape='rectangle' />
 					</Grid>
 					<LeftContent>
 						<Inner>
@@ -67,7 +57,7 @@ const Member = () => {
 						</Inner>
 					</RightContent>
 					<Grid width='120px' height='120px' cursor='pointer'>
-						<Image src={member2} shape='rectangle' />
+						<Image src='/assets/member2.png' shape='rectangle' />
 					</Grid>
 				</Right>
 				{/* 팀원소개 수민 */}
@@ -76,7 +66,7 @@ const Member = () => {
 						window.open('https://github.com/sumye', '_blank');
 					}}>
 					<Grid width='120px' height='120px' cursor='pointer'>
-						<Image src={member3} shape='rectangle' />
+						<Image src='/assets/member3.png' shape='rectangle' />
 					</Grid>
 					<LeftContent>
 						<Inner>
@@ -107,7 +97,7 @@ const Member = () => {
 						</Inner>
 					</RightContent>
 					<Grid width='120px' height='120px' cursor='pointer'>
-						<Image src={member4} shape='rectangle' />
+						<Image src='/assets/member4.png' shape='rectangle' />
 					</Grid>
 				</Right>
 				{/* 팀원소개 태순 */}
@@ -116,7 +106,7 @@ const Member = () => {
 						window.open('https://github.com/devkevinsoon', '_blank');
 					}}>
 					<Grid width='120px' height='120px' cursor='pointer'>
-						<Image src={member5} shape='rectangle' />
+						<Image src='/assets/member5.png' shape='rectangle' />
 					</Grid>
 					<LeftContent>
 						<Inner>
@@ -143,13 +133,13 @@ const Member = () => {
 						</Inner>
 					</RightContent>
 					<Grid width='120px' height='120px'>
-						<Image src={member6} shape='rectangle' />
+						<Image src='/assets/member6.png' shape='rectangle' />
 					</Grid>
 				</Right>
 				{/* 팀원소개 지혜 */}
 				<Left>
 					<Grid width='120px' height='120px'>
-						<Image src={member7} shape='rectangle' />
+						<Image src='/assets/member7.png' shape='rectangle' />
 					</Grid>
 					<LeftContent>
 						<Inner>
@@ -177,13 +167,13 @@ const Member = () => {
 						</Inner>
 					</RightContent>
 					<Grid width='120px' height='120px'>
-						<Image src={member8} shape='rectangle' />
+						<Image src='/assets/member8.png' shape='rectangle' />
 					</Grid>
 				</Right>
 				{/* 팀원소개 싹 */}
 				<Left>
 					<Grid width='120px' height='120px'>
-						<Image src={member9} shape='rectangle' />
+						<Image src='/assets/member9.png' shape='rectangle' />
 					</Grid>
 					<LeftContent>
 						<Inner>

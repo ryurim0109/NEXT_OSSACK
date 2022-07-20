@@ -19,7 +19,7 @@ const SearchPage = () => {
 	const dispatch = useDispatch();
 	//const login = useSelector((state:RootState) => state.user.is_login);
 	//const is_session = localStorage.getItem("token");
-	const [local, setLocal] = useState(null);
+	const [local, setLocal] = useState<any>(null);
 	useEffect(() => {
 		const item = localStorage.getItem('keywords');
 		//	const local = !!item ? JSON.parse(item) : undefined;

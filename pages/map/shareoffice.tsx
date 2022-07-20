@@ -5,13 +5,13 @@ import { useRouter } from 'next/router';
 import { MyHeader, Bar, Spinner } from '../../src/components/shared/index';
 //import { MapOfficeResult } from '../components/search/index';
 import { RootState, wrapper } from '../../store/index';
-import { MapOfficeResult } from '../../src/components/containers/search/index';
+import { ShareResult } from '../../src/components/containers/search/index';
 import { actionCreators as officeActions } from '../../store/redux/office';
 import { END } from 'redux-saga';
 import { testinstance } from '../../src/shared/api';
 import { GetServerSideProps } from 'next';
 
-const MapOfficeList = (test1: any) => {
+const MapOfficeList = (post: any) => {
 	const dispatch = useDispatch();
 	const router = useRouter();
 	const search = router.asPath.split('=')[1];
@@ -20,8 +20,8 @@ const MapOfficeList = (test1: any) => {
 		(state: RootState) => state?.office?.list.totalpage,
 	);
 	const title = useSelector((state: RootState) => state?.office?.list?.keyword);
-	const test = useSelector((state: RootState) => state?.office?.test);
-	//console.log(test1);
+	//const test = useSelector((state: RootState) => state?.office?.test);
+	console.log(post);
 	//console.log(test1);
 	//const login = useSelector((state) => state.user.is_login);
 
@@ -51,18 +51,11 @@ const MapOfficeList = (test1: any) => {
 		return () => observer && observer.disconnect();
 	}, [targetRef.current]);
 
-	useEffect(() => {
-		// const serach_info = {
-		// 	pageno: pageno,
-		// 	keyword: search,
-		// };
-		// dispatch(getSOListDB(serach_info));
-	}, []);
 	return (
 		<React.Fragment>
 			<MyHeader is_back>{title} 리스트</MyHeader>
 			<Outter>
-				<MapOfficeResult test1={test1} />
+				<ShareResult post={post} />
 			</Outter>
 			{isLoading ? <Spinner /> : null}
 			{totalPage > pageno ? <div ref={targetRef}> </div> : null}
@@ -86,10 +79,13 @@ export default MapOfficeList;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 	try {
-		const res = await testinstance.get('/products');
+		console.log('context in next', context);
+		const res = await testinstance.get('/posts');
 		const data = res.data;
-		return { props: { test1: data } };
+		//console.log(data);
+		return { props: { post: data } };
 	} catch (e) {
+		//console.log(e);
 		return { props: { e } };
 	}
 };
