@@ -22,7 +22,17 @@ export const instances = axios.create({
 		accept: 'application/json',
 	},
 });
+export const testinstance = axios.create({
+	baseURL: 'https://dummyjson.com',
 
+	//baseURL: "https://ossack-dk.shop",
+
+	headers: {
+		'content-type': 'application/json; charset=UTF-8',
+		accept: 'application/json',
+	},
+	withCredentials: false,
+});
 //2. 요청 인터셉터
 // instance.interceptors.request.use(
 // 	//요청직전 호출

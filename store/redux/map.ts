@@ -1,7 +1,7 @@
 import { createAction, handleActions } from 'redux-actions';
 import produce from 'immer';
 import { takeLatest } from 'redux-saga/effects';
-import { requestShareMapInfo } from '../saga/mapApi';
+import { requestShareMapInfo, requestOfficeMapInfo } from '../saga/mapApi';
 import createAsyncSaga, {
 	asyncActionCreator,
 	createAsyncAction,
@@ -30,6 +30,7 @@ const isLoaded = createAction(LOADED, (loaded: any) => ({ loaded }));
 
 // saga
 const getShareMapSaga = createAsyncSaga(setShareList, requestShareMapInfo);
+const getOfficeMapSaga = createAsyncSaga(setOfficeList, requestOfficeMapInfo);
 
 // reducer
 export default handleActions(
@@ -54,8 +55,6 @@ export default handleActions(
 
 const actionCreators = {
 	setOfficeList,
-	// getOfficeData,
-	// getShareData,
 	isLoaded,
 	setShareList,
 };
@@ -64,6 +63,7 @@ export { actionCreators };
 
 export function* mapSaga() {
 	yield takeLatest(SET_SHARE_LIST.REQUEST, getShareMapSaga);
+	yield takeLatest(SET_OFFICE_LIST.REQUEST, getOfficeMapSaga);
 }
 //청크
 //const getOfficeData = (pos, level, router, monthly) => {

@@ -2,8 +2,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './saga/index';
-import withReduxSaga from 'next-redux-saga';
-import withRedux from 'next-redux-wrapper';
+import { createWrapper } from 'next-redux-wrapper';
 import user from './redux/user';
 import office from './redux/office';
 import map from './redux/map';
@@ -43,4 +42,6 @@ const configureStore = () => {
 	return store;
 };
 export type RootState = ReturnType<typeof rootReducer>;
-export default configureStore();
+export const wrapper: any = createWrapper(configureStore, {
+	debug: process.env.NODE_ENV === 'development',
+});

@@ -1,7 +1,7 @@
 import { createAction, handleActions } from 'redux-actions';
 import produce from 'immer';
 import { takeLatest } from 'redux-saga/effects';
-import { requestMainOffice } from '../saga/officeApi';
+import { requestMainOffice, requestTestInfo } from '../saga/officeApi';
 import createAsyncSaga, {
 	asyncActionCreator,
 	createAsyncAction,
@@ -80,6 +80,7 @@ export interface LikeParams {
 export interface officeType {
 	list: SearchItemDataParams;
 	main_list: Array<any>;
+	test: Array<any>;
 	hot_list: Array<any>;
 	share_list: ShareItemDataParams;
 	is_loaded: boolean;
@@ -94,6 +95,7 @@ const initialState: officeType = {
 		keyword: '서울시',
 		estateResponseDtoList: [],
 	},
+	test: [],
 	main_list: [],
 	hot_list: [],
 	share_list: {
@@ -166,11 +168,14 @@ const initialState: officeType = {
 };
 // Action type
 const GET_MAIN_OFFICE = asyncActionCreator('GET_MAIN_OFFICE'); // 메인페이지 리스트 조회
+const GET_TEST = asyncActionCreator('GET_TEST');
 
 // Action Creator
 const getMainOffice = createAsyncAction(GET_MAIN_OFFICE);
+const getTest = createAsyncAction(GET_TEST);
 // saga
 const getMainSaga = createAsyncSaga(getMainOffice, requestMainOffice);
+const getTestSaga = createAsyncSaga(getTest, requestTestInfo);
 
 // reducer
 export default handleActions(
@@ -179,14 +184,19 @@ export default handleActions(
 			produce(state, (draft) => {
 				draft.main_list = payload.main_list;
 			}),
+		[GET_TEST.SUCCESS]: (state, { payload }) =>
+			produce(state, (draft) => {
+				draft.test = payload.test;
+			}),
 	},
 	initialState,
 );
 
-const actionCreators = { getMainOffice };
+const actionCreators = { getMainOffice, getTest };
 
 export { actionCreators };
 
 export function* officeSaga() {
 	yield takeLatest(GET_MAIN_OFFICE.REQUEST, getMainSaga);
+	yield takeLatest(GET_TEST.REQUEST, getTestSaga);
 }

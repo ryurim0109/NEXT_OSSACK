@@ -1,11 +1,7 @@
 import React, { useEffect } from 'react';
 import { Grid, Button, Text, Image } from '../../../elements/index';
 import styled from 'styled-components';
-// import {
-//   getMainOfficeDB,
-//   mainDeleteLikeDB,
-//   mainClickLikeDB,
-// } from "../../redux/modules/office";
+import { actionCreators as officeActions } from '../../../../store/redux/office';
 import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import { RootState } from '../../../../store/index';
@@ -17,9 +13,9 @@ const OfficeList = () => {
 		(state: RootState) => state.office.main_list,
 	);
 
-	// useEffect(() => {
-	//   dispatch(getMainOfficeDB("맛집"));
-	// }, []);
+	useEffect(() => {
+		dispatch(officeActions.getMainOffice.request());
+	}, []);
 	return (
 		<React.Fragment>
 			{/* map돌리기 */}

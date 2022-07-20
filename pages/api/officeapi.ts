@@ -31,7 +31,9 @@ export default function handler(
 			roomFloor: 2,
 			buildingInfo: '깔끔합니다',
 			area: '120/105㎡(전용률 88%)',
-			images: [],
+			images: [
+				'https://blob.nemoapp.kr/article-photos/4e0ebb23-faf8-4194-9d99-0a0fa35766df/s.jpg',
+			],
 			subways: '홍대입구',
 			mylike: true,
 			title: '깨끗한 사무실',
@@ -46,7 +48,9 @@ export default function handler(
 			roomFloor: 2,
 			buildingInfo: '깔끔합니다',
 			area: '120/105㎡(전용률 88%)',
-			images: [],
+			images: [
+				'https://blob.nemoapp.kr/article-photos/4e0ebb23-faf8-4194-9d99-0a0fa35766df/s.jpg',
+			],
 			subways: '홍대입구',
 			mylike: true,
 			title: '깨끗한 사무실',
@@ -61,7 +65,9 @@ export default function handler(
 			roomFloor: 2,
 			buildingInfo: '깔끔합니다',
 			area: '120/105㎡(전용률 88%)',
-			images: [],
+			images: [
+				'https://blob.nemoapp.kr/article-photos/4e0ebb23-faf8-4194-9d99-0a0fa35766df/s.jpg',
+			],
 			subways: '홍대입구',
 			mylike: true,
 			title: '깨끗한 사무실',
@@ -76,7 +82,9 @@ export default function handler(
 			roomFloor: 2,
 			buildingInfo: '깔끔합니다',
 			area: '120/105㎡(전용률 88%)',
-			images: [],
+			images: [
+				'https://blob.nemoapp.kr/article-photos/4e0ebb23-faf8-4194-9d99-0a0fa35766df/s.jpg',
+			],
 			subways: '홍대입구',
 			mylike: true,
 			title: '깨끗한 사무실',

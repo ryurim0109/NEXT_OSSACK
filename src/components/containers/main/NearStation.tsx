@@ -33,7 +33,7 @@ const NearStation: NextPage<Props> = () => {
 	const stationOfficeList = useSelector(
 		(state: RootState) => state.office.main_list,
 	);
-	console.log(stationOfficeList);
+
 	useEffect(() => {
 		dispatch(officeActions.getMainOffice.request());
 	}, []);
