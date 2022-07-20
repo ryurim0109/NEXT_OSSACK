@@ -85,23 +85,24 @@ const MapOfficeResult = (test1: any) => {
 							justifyContent='space-between'>
 							<Grid display='flex' height='12px' alignItems='center'>
 								<Text size='10px' bold color='#666'>
-									{o?.brand} ∙ {o?.category}
+									{o?.description}
 								</Text>
 							</Grid>
 							<Grid display='flex' height='17px' alignItems='center'>
 								{' '}
-								<Text size='14px'>{o?.description}</Text>
-							</Grid>
-
-							<Grid display='flex' height='12px' alignItems='center'>
-								<Text size='10px'>{o.discountPercentage}</Text>
-							</Grid>
-							<Grid display='flex' height='17px' alignItems='center'>
-								<Text size='14px' bold>
-									<Span>{o.price}</Span>
+								<Text size='14px'>
+									{o?.brand} ∙ {o?.category}
 								</Text>
-								<Text size='14px' bold>
-									<Span>{o?.rating}</Span>
+							</Grid>
+							<Grid
+								display='flex'
+								width='45%'
+								height='17px'
+								alignItems='center'
+								justifyContent='space-between'>
+								<Text size='14px'>{o.price}000원</Text>
+								<Text size='14px' color='red'>
+									{o.discountPercentage}%할인
 								</Text>
 							</Grid>
 						</Grid>
