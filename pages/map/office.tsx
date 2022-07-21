@@ -29,6 +29,8 @@ const MapOfficeList = (test1: any) => {
 	const targetRef = useRef<HTMLDivElement>(null);
 	const [isLoading, setIsLoading] = useState(false);
 
+	console.log('Map office list is called');
+
 	const callback: any = async ([entry]: any, observer: any) => {
 		if (entry.isIntersecting && !isLoading) {
 			observer.unobserve(entry.target);
@@ -86,8 +88,7 @@ export default MapOfficeList;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 	try {
-		const res = await testinstance.get('/products');
-		const data = res.data;
+		const { data } = await testinstance.get('/products');
 		return { props: { test1: data } };
 	} catch (e) {
 		return { props: { e } };

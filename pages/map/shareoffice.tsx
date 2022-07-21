@@ -80,8 +80,7 @@ export default MapOfficeList;
 export const getServerSideProps: GetServerSideProps = async (context) => {
 	try {
 		console.log('context in next', context);
-		const res = await testinstance.get('/posts');
-		const data = res.data;
+		const { data } = await testinstance.get('/posts');
 		//console.log(data);
 		return { props: { post: data } };
 	} catch (e) {

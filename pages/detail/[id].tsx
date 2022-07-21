@@ -144,9 +144,9 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
 export const getStaticProps: GetStaticProps = async (context) => {
 	try {
 		const { id } = context.params as any;
-		const res = await testinstance.get(`/products/${id}`);
-		const data = res.data;
-		return { props: { oneProduct: data } };
+		const { data } = await testinstance.get(`/products/${id}`);
+		console.log('revalidate in detailPage');
+		return { props: { oneProduct: data }, revalidate: 10 };
 	} catch (e) {
 		return { props: { e } };
 	}

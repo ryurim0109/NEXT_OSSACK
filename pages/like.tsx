@@ -70,8 +70,7 @@ export default Like;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 	try {
-		const response = await axios.get<any>('http://localhost:3000/api/likeapi');
-		const data = response.data;
+		const { data } = await axios.get<any>('http://localhost:3000/api/likeapi');
 		//console.log('data in next mypage', data);
 		return {
 			props: {
