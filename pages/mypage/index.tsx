@@ -9,7 +9,7 @@ import { Grid, Image, Text } from '../../src/elements/index';
 import { GetStaticProps, NextPage } from 'next';
 import axios from 'axios';
 
-const Mypage: NextPage<Props> = ({ user_info }) => {
+const Mypage: NextPage<Props> = () => {
 	//console.log(user_info, 'dlejre');
 	return (
 		<>
@@ -34,11 +34,12 @@ const Mypage: NextPage<Props> = ({ user_info }) => {
 								border='2px solid #F3F3F3'
 								type='circle'
 								size='112'
-								src={
-									user_info?.imageUrl
-										? user_info?.imageUrl
-										: '/assets/default.png'
-								}
+								src={'/assets/default.png'}
+								// src={
+								// 	user_info?.imageUrl
+								// 		? user_info?.imageUrl
+								// 		: '/assets/default.png'
+								// }
 							/>
 						</Grid>
 						<Grid
@@ -47,12 +48,14 @@ const Mypage: NextPage<Props> = ({ user_info }) => {
 							padding='12px 0'
 							justifyContent='center'>
 							<Text size='18px' bold>
-								{user_info?.nickname ? user_info?.nickname : '게스트'}님
+								{/* {user_info?.nickname ? user_info?.nickname : '게스트'}님 */}
+								게스트님
 							</Text>
 						</Grid>
 						<Grid width='100%' display='flex' justifyContent='center'>
 							<Text size='12px' color='#666'>
-								{user_info?.userEmail ? user_info?.userEmail : '이메일 없음'}
+								{/* {user_info?.userEmail ? user_info?.userEmail : '이메일 없음'} */}
+								이메일없음
 							</Text>
 						</Grid>
 					</Grid>
@@ -86,21 +89,21 @@ export interface userType {
 interface Props {
 	user_info: userType;
 }
-export const getStaticProps: GetStaticProps = async () => {
-	try {
-		const response = await axios.get<userType>(
-			'http://localhost:3000/api/userapi',
-		);
-		const data = response.data;
-		//console.log('data in next mypage', data);
-		return {
-			props: {
-				user_info: data,
-			},
-		};
-	} catch (err) {
-		//console.log('err in next mypage', err);
-		return { props: { err } };
-	}
-};
+// export const getStaticProps: GetStaticProps = async () => {
+// 	try {
+// 		const response = await axios.get<userType>(
+// 			'http://localhost:3000/api/userapi',
+// 		);
+// 		const data = response.data;
+// 		//console.log('data in next mypage', data);
+// 		return {
+// 			props: {
+// 				user_info: data,
+// 			},
+// 		};
+// 	} catch (err) {
+// 		//console.log('err in next mypage', err);
+// 		return { props: { err } };
+// 	}
+// };
 export default Mypage;

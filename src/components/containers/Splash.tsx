@@ -6,9 +6,11 @@ import { useRouter } from 'next/router';
 const Splash = () => {
 	const router = useRouter();
 	let timeout: NodeJS.Timeout;
-	timeout = setTimeout(() => {
-		router.push('/start');
-	}, 2000);
+	useEffect(() => {
+		timeout = setTimeout(() => {
+			router.push('/start');
+		}, 2000);
+	}, []);
 
 	useEffect(() => {
 		return () => {
